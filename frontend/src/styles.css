@@ -1,0 +1,58 @@
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  background: linear-gradient(135deg, #0c0c0c, #1b1b1b, #2e2e2e);
+  color: #ffffff;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+h1,
+h2,
+h4 {
+  color: #ffe81f;
+  text-align: center;
+}
+
+.container {
+  background-color: rgba(0, 0, 0, 0.85);
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(255, 232, 31, 0.2);
+}
+
+input[type="text"],
+input[type="password"] {
+  background-color: #222;
+  color: #fff;
+  border: 1px solid #555;
+}
+
+input::placeholder {
+  color: #aaa;
+}
+
+.btn {
+  background-color: #ffe81f;
+  color: #000;
+  font-weight: bold;
+}
+
+.btn:hover {
+  background-color: #d6c10c;
+}
+
+ul.list-group {
+  background-color: transparent;
+  padding: 0;
+}
+
+.list-group-item {
+  background-color: rgba(255, 255, 255, 0.05);
+  border: none;
+  color: #ffe81f;
+  margin-bottom: 0.5rem;
+}
