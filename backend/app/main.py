@@ -2,12 +2,15 @@ from fastapi import FastAPI, Depends, HTTPException, status
 from sqlalchemy.orm import Session
 from fastapi.security import OAuth2PasswordRequestForm
 from fastapi.middleware.cors import CORSMiddleware
-from . import models, schemas, auth, database
+from . import models, schemas, auth, database, ai
 from .auth import get_db, get_current_user
+
 
 models.Base.metadata.create_all(bind=database.engine)
 
 app = FastAPI()
+
+app.include_router(ai.router)
 
 app.add_middleware(
     CORSMiddleware,

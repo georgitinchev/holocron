@@ -1,3 +1,18 @@
+export async function getAIGeneratedContent(prompt, token) {
+  const res = await fetch(`${API_BASE_URL}/ai/generate`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${token}`,
+    },
+    body: JSON.stringify({ prompt }),
+  });
+  if (!res.ok) {
+    const data = await res.json().catch(() => ({}));
+    throw new Error(data.detail || "Failed to get AI content");
+  }
+  return res.json();
+}
 const API_BASE_URL = "http://127.0.0.1:8000";
 
 export async function login(username, password) {
